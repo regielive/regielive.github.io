@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="darkreader-lock"><!-- le site a ses propres thèmes clair et sombre : Dark Reader ne le modifie pas -->
+<meta name="color-scheme" content="light dark">
+<title>RégieLive — l’écran du culte, sans prise de tête</title>
+<meta name="description" content="RégieLive affiche les chants, les versets et les vidéos sur l’écran de votre église. Gratuit, en français, pensé pour les bénévoles.">
+<link rel="canonical" href="https://regielive.github.io/">
+<meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:site_name" content="RégieLive">
+<meta property="og:title" content="RégieLive — l’écran du culte, sans prise de tête"><meta property="og:description" content="RégieLive affiche les chants, les versets et les vidéos sur l’écran de votre église. Gratuit, en français, pensé pour les bénévoles.">
+<meta property="og:url" content="https://regielive.github.io/"><meta property="og:image" content="https://regielive.github.io/img/partage.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icone.png" type="image/png"><link rel="apple-touch-icon" href="img/icone-180.png">
+<link rel="preload" href="assets/polices/familjen-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script>try{const t=localStorage.getItem("rl-theme");if(t==="clair"||t==="sombre")document.documentElement.dataset.theme=t;}catch(_){}</script>
+</head><body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="l"><a class="logo" href="index.html" aria-label="RégieLive, accueil">Régie<b>Live</b></a>
+ <nav aria-label="Menu principal"><a href="fonctions.html">Fonctions</a><a href="ordinateur.html">Mon ordinateur suffit-il ?</a><a href="telecharger.html">Télécharger</a>
+  <div class="theme" role="group" aria-label="Apparence"><button data-t="auto">Auto</button><button data-t="clair">Clair</button><button data-t="sombre">Sombre</button></div>
+  <details class="menu-m"><summary>Menu</summary><div><a href="index.html">Accueil</a><a href="fonctions.html">Fonctions</a><a href="ordinateur.html">Mon ordinateur suffit-il ?</a><a href="telecharger.html">Télécharger</a><a href="manuel.html">Manuel</a><a href="nouveautes.html">Nouveautés</a><a href="questions.html">Questions fréquentes</a><a href="association.html">L’association et le contact</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="licence.html">Licence</a></div></details></nav>
+</header>
+<main id="contenu">
+
+<section class="hero l">
+ <div>
+  <h1>L’écran du culte, sans prise de tête.</h1>
+  <p class="lead">RégieLive affiche les chants, les versets et les vidéos sur l’écran de votre église. Préparez à l’avance, ou ajoutez au dernier moment : tout reste simple.</p>
+  <div class="cta"><a class="btn" href="telecharger.html">Télécharger gratuitement</a><a class="btn alt" href="#culte">Voir comment ça marche</a></div>
+  <p class="gratuit">Gratuit, en français, pensé pour les bénévoles. Porté par l’association ACP.</p>
+ </div>
+ <div class="demo" id="demo" aria-label="Essayez : préparez puis envoyez à l’écran">
+  <div class="prep">
+   <p class="etiq">Je prépare</p>
+   <label class="champ"><span class="sr">Numéro de chant ou référence biblique</span><input id="q" autocomplete="off" spellcheck="false" placeholder="42 ou jn316"></label>
+   <div class="puces"><button data-q="42">42</button><button data-q="jn316">jn316</button><button data-q="ps23">ps23</button></div>
+   <div class="carte-prep" id="cp"><b id="cpT">Tapez un numéro de chant ou un verset</b><span id="cpX">Par exemple 42, ou jn316 pour Jean 3.16.</span></div>
+   <button class="espace" id="go" disabled><kbd id="kc">Espace</kbd><span>Envoyer à l’écran</span></button>
+  </div>
+  <figure class="eglise" id="eg">
+   <div class="toile" id="toile"><p id="tx">Bienvenue</p><small id="tr"></small></div>
+   <figcaption><i class="led"></i><span id="etat">L’écran de l’église</span></figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="l detail-w" aria-label="Pourquoi RégieLive">
+ <div class="axes" role="tablist">
+  <button class="ax on" role="tab" aria-selected="true" data-k="simple"><i></i><b>Simple</b><span>Si vous savez utiliser un ordinateur, vous savez vous en servir.</span></button>
+  <button class="ax" role="tab" aria-selected="false" data-k="tout"><i></i><b>Tout au même endroit</b><span>Chants, Bible, vidéos et annonces dans un seul logiciel.</span></button>
+  <button class="ax" role="tab" aria-selected="false" data-k="sur"><i></i><b>Sans surprise</b><span>Il marche sans Internet. Rien ne s’arrête au mauvais moment.</span></button>
+ </div>
+ <div class="detail" role="tabpanel" aria-live="polite"><div><h2 id="dt"></h2><p id="dp"></p><ul id="dl"></ul><a class="plus" href="fonctions.html" id="dm">En savoir plus</a></div><div class="stage" id="stage" aria-hidden="true"></div></div>
+</section>
+
+<section class="bande" aria-label="RégieLive pendant un culte">
+ <img src="img/culte.webp" alt="Une assemblée pendant un culte, l’écran au-dessus de la scène" loading="lazy"><!-- À COMPLÉTER : photo provisoire, à remplacer par une vraie photo de culte (avec l’accord des personnes visibles) -->
+ <div class="bande-t l"><p>Pensé pour des églises comme la vôtre,<br>et pour les bénévoles qui les servent.</p></div>
+</section>
+<section class="imprevu l" aria-labelledby="imp-t">
+ <h2 id="imp-t">Le culte ne se passe jamais tout à fait comme prévu.</h2>
+ <div class="imp-g">
+  <article class="imp" id="impA">
+   <div class="scene">
+    <div class="prog" aria-hidden="true">
+     <div class="it fait">Accueil</div><div class="it ecran" id="aCur">Chant 42</div><div class="it">Jean 3.16</div>
+    </div>
+    <div class="tape" aria-hidden="true"><span id="aTape"></span><i></i></div>
+   </div>
+   <h3>Un chant pas prévu&nbsp;?</h3>
+   <p>Un chant demandé au dernier moment, un verset que le prédicateur ajoute : tapez-le, il est à l’écran. Le reste du programme ne bouge pas.</p>
+   <button class="rejouer" data-r="A">Rejouer</button>
+  </article>
+  <article class="imp" id="impB">
+   <div class="scene">
+    <div class="usb" id="usb"><span class="cle">Clé USB</span><span class="fichier" id="fic" tabindex="0" role="button" aria-label="Faire glisser annonce.mp4 dans le programme">annonce.mp4</span></div>
+    <div class="prog zone" id="zone"><div class="it">Accueil</div><div class="it">Annonces</div><div class="depot" id="depot">Glissez ici</div></div>
+   </div>
+   <h3>Une vidéo sur une clé USB&nbsp;?</h3>
+   <p>Glissez-la dans le programme : RégieLive la copie dans le dossier du culte. Retirez la clé, rien ne disparaît, même au culte suivant ou sur un autre ordinateur.</p>
+   <button class="rejouer" data-r="B">Rejouer</button>
+  </article>
+  <article class="imp" id="impC">
+   <div class="scene sceneC">
+    <div class="voix" id="voix" aria-hidden="true"><span class="qui">Le prédicateur</span><span id="cTxt"></span></div>
+    <div class="propose" id="prop"><span>Jean 3.16</span><button id="cAff">Afficher</button></div>
+    <div class="mini" id="mini"><p id="cEcran">Prédication</p></div>
+   </div>
+   <h3>Le prédicateur annonce un verset&nbsp;?</h3>
+   <p>RégieLive écoute et vous propose le verset annoncé. Vous gardez la main : un clic pour l’afficher, rien ne part à l’écran sans vous.</p>
+   <button class="rejouer" data-r="C">Rejouer</button>
+  </article>
+ </div>
+</section>
+<section class="etapes l" id="culte">
+ <h2>Un culte avec RégieLive, en trois temps.</h2>
+ <div class="trois">
+  <div><h3>Avant le culte</h3><p>Si vous le pouvez, préparez le programme : tapez « 42 » pour le chant 42, « jn316 » pour Jean 3.16, glissez les vidéos et les images. Ce n’est pas obligatoire : tout peut s’ajouter en cours de route.</p></div>
+  <div><h3>Pendant le culte</h3><p>Une touche envoie la suite à l’écran. Un chant pas prévu, une vidéo apportée au dernier moment : ajoutez-les, ils sont prêts en quelques secondes. Ce que l’assemblée voit reste toujours devant vous.</p></div>
+  <div><h3>Après le culte</h3><p>Rien à ranger : le programme, les vidéos et les images sont gardés dans un seul dossier, prêt à être réutilisé ou copié sur un autre ordinateur.</p></div>
+ </div>
+</section>
+
+<section class="aussi l" aria-labelledby="aussi-t">
+ <h2 id="aussi-t">Et aussi.</h2>
+ <div class="tuiles">
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg><h3>Plusieurs écrans</h3><p>La salle, la scène pour les chanteurs, le direct sur Internet : chacun reçoit ce qu’il lui faut.</p></div>
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v18H8zM11 18h2"/></svg><h3>Les téléphones de l’équipe</h3><p>Un message discret à l’équipe technique, qui répond « Vu » depuis son téléphone.</p></div>
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h11v9H4zM15 11l5-3v9l-5-3M7 5h.01"/></svg><h3>Les caméras</h3><p>Le cadreur voit sur son téléphone quand sa caméra passe à l’antenne.</p></div>
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H4zM8 20l4-4 4 4"/></svg><h3>Vos présentations</h3><p>PowerPoint et PDF s’affichent tels quels, animations comprises.</p></div>
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H5zM19 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg><h3>Une Bible d’étude</h3><p>Deux traductions côte à côte, les mots d’origine et les versets liés.</p></div>
+  <div class="tuile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01"/></svg><h3>Une aide intégrée</h3><p>Une question ? La réponse est dans le logiciel, sans Internet.</p></div>
+ </div>
+ <a class="plus" href="fonctions.html">Toutes les fonctions</a>
+</section>
+<section class="pc l" id="pc">
+ <div><h2>Mon ordinateur suffit-il ?</h2><p>Pour afficher les chants, les versets et les vidéos, la plupart des ordinateurs récents sous Windows suffisent. RégieLive contient un test : en trois minutes, il vous dit ce que votre ordinateur peut faire.</p><a class="plus" href="ordinateur.html">Voir ce qu’il faut</a></div>
+ <img src="img/s13-bench.webp" alt="Le test « Tester ce PC » de RégieLive" loading="lazy">
+</section>
+
+</main>
+<footer class="l"><div class="pied"><span>RégieLive est un logiciel gratuit, porté par l’association <a href="https://acproduction.github.io">ACP</a>.</span><span>Version 1.98 · 5 novembre 2026</span></div><nav aria-label="Pied de page"><a href="manuel.html">Manuel</a><a href="nouveautes.html">Nouveautés</a><a href="questions.html">Questions fréquentes</a><a href="association.html">L’association et le contact</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="licence.html">Licence</a></nav></footer>
+<script src="assets/theme.js"></script><script src="assets/accueil.js"></script>
+</body></html>

@@ -1,0 +1,306 @@
+/* Site RégieLive — style commun. Polices : Familjen Grotesk et Newsreader (licence SIL OFL). */
+@font-face{font-family:'Familjen Grotesk Variable';font-style:normal;font-display:swap;font-weight:400 700;src:url(polices/familjen-grotesk-latin-wght-normal.woff2) format('woff2-variations');unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Familjen Grotesk Variable';font-style:normal;font-display:swap;font-weight:400 700;src:url(polices/familjen-grotesk-latin-ext-wght-normal.woff2) format('woff2-variations');unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Newsreader Variable';font-style:normal;font-display:swap;font-weight:200 800;src:url(polices/newsreader-latin-wght-normal.woff2) format('woff2-variations');unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader Variable';font-style:normal;font-display:swap;font-weight:200 800;src:url(polices/newsreader-latin-ext-wght-normal.woff2) format('woff2-variations');unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{--fond:#eef1f5;--panneau:#e2e7ee;--touche:#232a35;--toucheT:#f4f6f9;--encre:#171c25;--doux:#566173;--trait:#d3d9e1;--ecran:#10141b;--ecranT:#d7dde6;
+ --rouge:#d93636;--vert:#1f9a54;--or:#e7a93b;--carte:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="clair"]){--fond:#1b2029;--panneau:#262c37;--touche:#3a4250;--toucheT:#eef1f5;--encre:#e9edf3;--doux:#a3adbd;--trait:#333b48;--ecran:#0c0f15;--carte:#222833}}
+:root[data-theme="sombre"]{--fond:#1b2029;--panneau:#262c37;--touche:#3a4250;--toucheT:#eef1f5;--encre:#e9edf3;--doux:#a3adbd;--trait:#333b48;--ecran:#0c0f15;--carte:#222833}
+*{box-sizing:border-box;margin:0}
+html{background:var(--fond);color-scheme:light}
+@media (prefers-color-scheme:dark){html:not([data-theme="clair"]){color-scheme:dark}}
+html[data-theme="sombre"]{color-scheme:dark}
+body{min-height:100vh;color:var(--encre);font:400 18px/1.6 "Familjen Grotesk Variable",system-ui,sans-serif;}
+a{color:inherit}
+.l{padding-left:clamp(16px,5vw,56px);padding-right:clamp(16px,5vw,56px)}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px}
+.logo{font:700 22px/1 "Familjen Grotesk Variable"}.logo b{color:var(--or)}
+nav{display:flex;gap:26px;font-size:16px;align-items:center}nav a{text-decoration:none}nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.theme{display:flex;background:var(--panneau);border-radius:6px;padding:3px}
+.theme button{border:0;background:transparent;color:var(--doux);font:500 13px/1 "Familjen Grotesk Variable";padding:7px 10px;border-radius:4px;cursor:pointer}
+.theme button[aria-pressed="true"]{background:var(--touche);color:var(--toucheT)}
+.theme button:focus-visible,.btn:focus-visible,.ax:focus-visible,.plus:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+/* accueil */
+.hero{padding-top:28px;padding-bottom:44px;display:grid;grid-template-columns:.9fr 1.25fr;gap:48px;align-items:center}
+h1{font:700 clamp(40px,5.4vw,78px)/.98 "Familjen Grotesk Variable";letter-spacing:-.035em;max-width:11ch}
+.lead{margin-top:20px;color:var(--doux);max-width:34ch;font-size:20px}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{padding:15px 24px;border-radius:8px;background:var(--or);color:#1a1408;font-weight:700;text-decoration:none;display:inline-block;transition:transform .15s}.btn:hover{transform:translateY(-1px)}
+.btn.alt{background:transparent;color:var(--encre);box-shadow:inset 0 0 0 2px var(--trait)}.btn.alt:hover{box-shadow:inset 0 0 0 2px var(--encre)}
+.gratuit{margin-top:14px;font-size:15px;color:var(--doux)}
+/* le moniteur « à l'antenne » */
+.mon{background:var(--touche);border-radius:12px;padding:9px 9px 11px;box-shadow:0 0 0 3px var(--rouge),0 24px 60px -24px rgba(217,54,54,.45),0 30px 60px -30px rgba(10,15,25,.5);transition:box-shadow .3s}
+.mon.pvw{box-shadow:0 0 0 3px var(--vert),0 24px 60px -24px rgba(31,154,84,.4),0 30px 60px -30px rgba(10,15,25,.5)}
+.mon .img{transition:opacity .35s}.mon .img.out{opacity:.15}
+.mon .img{aspect-ratio:16/10;background:var(--ecran) center/cover no-repeat;border-radius:3px;display:grid;place-items:end start;transition:background-image .2s}
+.mon figcaption{color:#c6cdd8;font-size:14px;margin-top:8px;display:flex;align-items:center;gap:8px}
+.led{width:10px;height:10px;border-radius:50%;background:var(--rouge);box-shadow:0 0 8px var(--rouge)}
+/* mini-démo : préparer à gauche, l'écran de l'église à droite */
+.demo{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px;align-items:stretch}
+.prep{background:var(--carte);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 40px -28px rgba(10,15,25,.35)}
+.etiq{font-size:14px;color:var(--doux);font-weight:600}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.champ input{width:100%;font:600 24px/1.2 "Familjen Grotesk Variable";color:var(--encre);background:transparent;border:0;border-bottom:2px solid var(--trait);padding:6px 0}
+.champ input:focus{outline:none;border-bottom-color:var(--or)}
+.puces{display:flex;gap:8px}.puces button{border:1px solid var(--trait);background:transparent;color:var(--encre);border-radius:999px;padding:4px 12px;font:500 14px/1.4 "Familjen Grotesk Variable";cursor:pointer}
+.puces button:hover,.puces button:focus-visible{border-color:var(--or);outline:none}
+.carte-prep{border-radius:10px;background:var(--fond);padding:12px 14px;min-height:92px;transition:box-shadow .25s}
+.carte-prep b{display:block;font-size:16px}.carte-prep span{display:block;color:var(--doux);font-size:14.5px;line-height:1.4;margin-top:4px}
+.carte-prep.pret{box-shadow:inset 0 0 0 2px var(--vert)}
+.espace{margin-top:auto;display:flex;align-items:center;gap:12px;border:0;background:transparent;color:var(--encre);font:600 15px/1 "Familjen Grotesk Variable";cursor:pointer;padding:0}
+.espace kbd{font:600 14px/1 "Familjen Grotesk Variable";padding:12px 34px;border-radius:8px;background:var(--fond);box-shadow:inset 0 -3px 0 var(--trait),0 0 0 1px var(--trait);color:var(--encre);transition:transform .08s,box-shadow .08s}
+.espace:not(:disabled) kbd{background:var(--or);color:#1a1408;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+.espace.appui kbd{transform:translateY(2px);box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}
+.espace:disabled{cursor:default;color:var(--doux)}
+.espace:focus-visible{outline:3px solid var(--or);outline-offset:4px;border-radius:8px}
+.eglise{background:var(--touche);border-radius:14px;padding:9px 9px 11px;box-shadow:0 0 0 3px var(--rouge),0 24px 60px -24px rgba(217,54,54,.45);transition:box-shadow .3s;display:flex;flex-direction:column}
+.eglise.pvw{box-shadow:0 0 0 3px var(--vert),0 24px 60px -24px rgba(31,154,84,.4)}
+.toile{flex:1;aspect-ratio:16/10;border-radius:6px;background:radial-gradient(120% 90% at 50% 40%,#1d2a44,#0d1220);display:grid;place-content:center;text-align:center;padding:6% 8%;overflow:hidden}
+.toile p{color:#f6f1e4;font:500 clamp(17px,1.75vw,26px)/1.28 "Newsreader Variable",Georgia,serif;text-wrap:balance;transition:opacity .3s,transform .3s}
+.toile small{color:#aeb7c8;font-size:13px;margin-top:10px;display:block;transition:opacity .3s}
+.toile.sort p,.toile.sort small{opacity:0;transform:translateY(-8px)}
+.toile.entre p{animation:entre .4s ease}
+@keyframes entre{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+.eglise figcaption{color:#c6cdd8;font-size:14px;margin-top:8px;display:flex;align-items:center;gap:8px}
+.eglise .led{width:10px;height:10px;border-radius:50%;background:var(--rouge);box-shadow:0 0 8px var(--rouge)}
+.eglise.pvw .led{background:var(--vert);box-shadow:0 0 8px var(--vert)}
+@media (max-width:900px){.demo{grid-template-columns:1fr}.eglise{order:-1}}
+@media (prefers-reduced-motion:reduce){.toile p,.toile small,.eglise,.carte-prep{transition:none}.toile.entre p{animation:none}}
+/* trois onglets : titre, phrase, trait qui se remplit (rouge = à l'écran, vert au survol) */
+.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:8px}
+.ax{appearance:none;border:0;background:none;color:var(--encre);text-align:left;cursor:pointer;padding:18px 0 4px;font:inherit;position:relative}
+.ax::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:2px;background:var(--trait)}
+.ax i{position:absolute;left:0;top:0;height:3px;border-radius:2px;width:0;background:var(--rouge)}
+.ax:hover::before{background:var(--vert)}
+.ax.on i{width:100%}
+.ax.on.anim i{width:0;animation:remplit var(--d,7s) linear forwards}
+@keyframes remplit{to{width:100%}}
+.ax b{display:flex;align-items:center;gap:10px;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.015em}
+.ax b::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--trait);flex:none;transition:background .2s,box-shadow .2s}
+.ax:hover b::before{background:var(--vert)}
+.ax.on b::before{background:var(--rouge);box-shadow:0 0 8px var(--rouge)}
+.ax span{display:block;color:var(--doux);font-size:16px;line-height:1.45;margin-top:6px;max-width:30ch}
+.ax:not(.on) b{color:var(--doux)}
+/* le détail de l'axe choisi */
+.detail{margin-top:30px;padding:28px clamp(20px,3vw,36px);background:var(--carte);border-radius:14px;max-width:none}
+.detail-w{padding-bottom:80px}
+.detail h2{font:700 clamp(28px,3vw,40px)/1.1 "Familjen Grotesk Variable";letter-spacing:-.02em}
+.detail p{margin-top:12px;color:var(--doux);max-width:42ch}
+.detail ul{margin-top:16px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 32px}@media (max-width:900px){.detail ul{grid-template-columns:1fr}}
+.detail li{padding-left:22px;position:relative}.detail li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--vert)}
+.plus{display:inline-block;margin-top:18px;font-weight:700;text-underline-offset:5px}
+.detail img{width:100%;border-radius:8px;display:block;border:1px solid var(--trait)}
+/* section « imprévus » : deux mini-animations */
+.imprevu{border-top:1px solid var(--trait);padding-top:60px;padding-bottom:70px}
+.imprevu h2{font:700 clamp(28px,3vw,40px)/1.1 "Familjen Grotesk Variable";letter-spacing:-.02em;max-width:24ch}
+.imp-g{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.imp{background:var(--carte);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.imp h3{font-size:22px;margin-top:18px;letter-spacing:-.01em}.imp p{margin-top:6px;color:var(--doux);font-size:16.5px;max-width:44ch}
+.rejouer{align-self:flex-start;margin-top:14px;border:0;background:none;color:var(--doux);font:600 14px/1 "Familjen Grotesk Variable";text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:4px 0}
+.rejouer:focus-visible,.fichier:focus-visible{outline:3px solid var(--or);outline-offset:3px;border-radius:6px}
+.scene{position:relative;height:220px;border-radius:12px;background:var(--fond);padding:16px;display:flex;gap:14px;align-items:flex-start;overflow:hidden}
+.prog{flex:1;display:flex;flex-direction:column;gap:7px}
+.it{background:var(--carte);border-radius:8px;padding:8px 12px;font-size:15px;font-weight:600;border-left:4px solid transparent;transition:border-color .3s,box-shadow .3s,opacity .3s}
+.it.fait{opacity:.5}.it.ecran{border-left-color:var(--rouge)}
+.it.nouveau{box-shadow:0 0 0 2px var(--vert);animation:pousse .45s ease}
+@keyframes pousse{from{opacity:0;transform:translateY(-6px);max-height:0;padding-top:0;padding-bottom:0}to{opacity:1;max-height:40px}}
+.tape{width:42%;background:var(--carte);border-radius:8px;padding:10px 12px;font:600 18px/1.3 "Familjen Grotesk Variable";min-height:46px;display:flex;align-items:center}
+.tape i{width:2px;height:20px;background:var(--or);margin-left:2px;animation:clign 1s steps(1) infinite}@keyframes clign{50%{opacity:0}}
+.usb{width:40%;display:flex;flex-direction:column;gap:10px;align-items:flex-start;transition:opacity .5s,transform .5s}
+.usb.retiree{opacity:0;transform:translateX(-20px)}
+.cle{font-size:13px;color:var(--doux);font-weight:600;display:flex;align-items:center;gap:8px}
+.cle::before{content:"";width:26px;height:12px;border-radius:3px;background:var(--touche);box-shadow:8px 0 0 -3px var(--doux)}
+.fichier{background:var(--touche);color:var(--toucheT);border-radius:8px;padding:9px 12px;font-size:14.5px;font-weight:600;cursor:grab;touch-action:none;user-select:none;position:relative;z-index:2;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.fichier.drag{transition:none;cursor:grabbing;box-shadow:0 10px 24px -8px rgba(0,0,0,.4)}
+.depot{border:2px dashed var(--trait);border-radius:8px;padding:8px 12px;font-size:14px;color:var(--doux);transition:border-color .2s,background .2s}
+.depot.vise{border-color:var(--vert);background:rgba(31,154,84,.08)}
+.copie{display:inline-block;margin-left:8px;font-size:12.5px;font-weight:600;color:var(--vert)}
+@media (max-width:900px){.imp-g{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.it.nouveau{animation:none}.tape i{animation:none}.fichier,.usb{transition:none}}
+.imp{transition:box-shadow .3s}.imp.joue{box-shadow:0 0 0 2px var(--rouge),0 18px 40px -26px rgba(217,54,54,.5)}
+@media (prefers-reduced-motion:reduce){.imp{transition:none}}
+/* carte Autopilot */
+.sceneC{flex-direction:column;gap:10px}
+.voix{background:var(--carte);border-radius:12px 12px 12px 3px;padding:9px 12px;font-size:14.5px;line-height:1.35;max-width:92%;min-height:52px}
+.voix .qui{display:block;font-size:12px;color:var(--doux);font-weight:600;margin-bottom:2px}
+.propose{align-self:flex-end;display:flex;align-items:center;gap:10px;background:#1d2a44;color:#eef2f8;border-radius:12px 12px 3px 12px;padding:7px 8px 7px 12px;font-size:14px;font-weight:600;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.propose.vu{opacity:1;transform:none}
+.propose button{border:0;border-radius:7px;background:var(--or);color:#1a1408;font:700 13px/1 "Familjen Grotesk Variable";padding:7px 10px;cursor:pointer;transition:transform .08s}
+.propose button.appui{transform:scale(.94)}
+.propose button:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.mini{margin-top:auto;align-self:flex-end;width:64%;height:74px;border-radius:6px;background:radial-gradient(120% 90% at 50% 40%,#1d2a44,#0d1220);display:grid;place-items:center;padding:6px 10px;text-align:center;box-shadow:0 0 0 3px var(--rouge)}
+.mini p{color:#f6f1e4;font:500 13px/1.3 "Newsreader Variable",Georgia,serif}
+/* Et aussi : petites sections accolées */
+.aussi{border-top:1px solid var(--trait);padding-top:60px;padding-bottom:70px}
+.aussi h2{font:700 clamp(28px,3vw,40px)/1.1 "Familjen Grotesk Variable";letter-spacing:-.02em}
+.tuiles{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:16px;overflow:hidden}
+.tuile{background:var(--carte);padding:24px 24px 26px}
+.tuile svg{width:28px;height:28px;fill:none;stroke:var(--or);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tuile h3{font-size:19px;margin-top:12px;letter-spacing:-.01em}
+.tuile p{margin-top:4px;color:var(--doux);font-size:15.5px;line-height:1.45}
+@media (max-width:1100px){.imp-g{grid-template-columns:1fr 1fr}}@media (max-width:760px){.imp-g{grid-template-columns:1fr}}
+@media (max-width:900px){.tuiles{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.tuiles{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.propose{transition:none}}
+/* rythme : bande photo, bande sombre, alternance clair / blanc */
+.bande{position:relative;height:clamp(300px,38vw,460px);overflow:hidden;background:#0d1118}
+.bande img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75}
+.bande::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,20,.85),rgba(10,13,20,.25) 65%)}
+.bande-t{position:absolute;inset:auto 0 clamp(28px,5vw,56px) 0;z-index:1}
+.bande-t p{color:#fff;font:500 clamp(24px,3vw,40px)/1.2 "Newsreader Variable",Georgia,serif;max-width:22ch;text-wrap:balance}
+.imprevu{--carte:#1f2633;--fond:#161c26;--encre:#eef1f6;--doux:#a9b2c2;--trait:#2e3644;background:#11161f;color:var(--encre);border-top:0!important}
+.etapes{background:var(--carte);border-top:0!important}
+.aussi{border-top:0!important}
+.aussi .tuile{background:var(--carte)}
+:root:not([data-theme="clair"]) .etapes{background:var(--carte)}
+/* un culte avec RégieLive : vraie suite d'étapes */
+.etapes{border-top:1px solid var(--trait);padding-top:60px;padding-bottom:70px}
+.etapes h2,.pc h2{font:700 clamp(28px,3vw,40px)/1.1 "Familjen Grotesk Variable";letter-spacing:-.02em;max-width:22ch}
+.trois{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:e}
+.trois div{counter-increment:e}
+.trois h3{font-size:21px;display:flex;gap:12px;align-items:baseline}
+.trois h3::before{content:counter(e);font-size:15px;width:28px;height:28px;border-radius:50%;background:var(--touche);color:var(--toucheT);display:inline-grid;place-items:center;flex:none}
+.trois p{margin-top:8px;color:var(--doux);font-size:17px}
+.pc{background:var(--carte);padding-top:60px;padding-bottom:60px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.pc p{margin-top:12px;color:var(--doux);max-width:46ch}
+.pc img{width:100%;max-width:420px;border-radius:8px;display:block;justify-self:center}
+footer{padding-top:34px;padding-bottom:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:15px;color:var(--doux)}
+footer nav{gap:20px;font-size:15px}
+@media (max-width:900px){.hero,.pc{grid-template-columns:1fr}.axes{grid-template-columns:1fr;gap:6px}.trois{grid-template-columns:1fr}header>nav a{display:none}}
+@media (prefers-reduced-motion:reduce){.mon,.mon .img{transition:none}.ax.on.anim i{animation:none;width:100%}}
+
+/* ===== Éléments communs à toutes les pages ===== */
+.logo{text-decoration:none}
+.skip{position:absolute;left:-999px;top:8px;background:var(--or);color:#1a1408;padding:8px 12px;border-radius:6px;z-index:10}
+.skip:focus{left:8px}
+header nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--or)}
+.menu-m{display:none;position:relative}
+.menu-m summary{list-style:none;cursor:pointer;font:600 15px/1 "Familjen Grotesk Variable";padding:9px 12px;border-radius:6px;background:var(--panneau)}
+.menu-m summary::-webkit-details-marker{display:none}
+.menu-m[open] summary{background:var(--touche);color:var(--toucheT)}
+.menu-m div{position:absolute;right:0;top:calc(100% + 6px);background:var(--carte);border-radius:12px;padding:8px;min-width:230px;box-shadow:0 20px 40px -18px rgba(10,15,25,.45);display:flex;flex-direction:column;z-index:20}
+.menu-m div a{padding:10px 12px;border-radius:8px;text-decoration:none}
+.menu-m div a:hover{background:var(--fond)}
+@media (max-width:900px){.menu-m{display:block}}
+footer{border-top:1px solid var(--trait);align-items:flex-start}
+footer .pied{display:flex;flex-direction:column;gap:6px;max-width:44ch}
+footer nav{flex-wrap:wrap;row-gap:8px}
+footer nav a{text-decoration:none}footer nav a:hover{text-decoration:underline}
+.a-completer{background:#ffe58a;color:#3a2c00;padding:1px 5px;border-radius:4px;font-weight:600;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* ===== Pages intérieures ===== */
+.page-head{padding-top:40px;padding-bottom:36px}
+.page-head h1{font-size:clamp(36px,4.6vw,62px);max-width:18ch}
+.page-head .lead{max-width:52ch}
+.prose{padding-bottom:80px;max-width:calc(760px + 2*clamp(16px,5vw,56px))}
+.prose h2{font:700 clamp(24px,2.6vw,32px)/1.15 "Familjen Grotesk Variable";letter-spacing:-.02em;margin-top:52px;scroll-margin-top:20px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:20px;margin-top:28px;letter-spacing:-.01em}
+.prose p,.prose ul,.prose ol{margin-top:12px;color:var(--doux)}
+.prose p strong,.prose li strong{color:var(--encre)}
+.prose ul,.prose ol{padding-left:22px}.prose li{margin-top:6px}
+.prose a{text-underline-offset:4px}
+.prose .note{font-size:15.5px;background:var(--carte);border-radius:12px;padding:14px 16px;border-left:4px solid var(--or)}
+.prose figure{margin-top:22px}
+.prose figure img{width:100%;border-radius:10px;display:block;border:1px solid var(--trait)}
+.prose figcaption{font-size:14.5px;color:var(--doux);margin-top:8px}
+.large{max-width:none}
+.sommaire{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sommaire a{border:1px solid var(--trait);border-radius:999px;padding:6px 14px;text-decoration:none;font-size:15px;font-weight:600}
+.sommaire a:hover{border-color:var(--or)}
+/* bloc de fonction : texte + capture */
+.fonc{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start;padding:44px 0;border-top:1px solid var(--trait)}
+.fonc:first-of-type{border-top:0}
+.fonc h2{margin-top:0}
+.fonc img{width:100%;border-radius:10px;border:1px solid var(--trait);display:block}
+.mots{margin-top:16px;font-size:15px;color:var(--doux)}
+.mots b{color:var(--encre);font-weight:600}
+@media (max-width:900px){.fonc{grid-template-columns:1fr;gap:20px}}
+/* tableaux */
+.tab-w{overflow-x:auto;margin-top:18px;border-radius:12px;border:1px solid var(--trait)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15.5px;background:var(--carte)}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--trait);vertical-align:top}
+th{font-weight:700;color:var(--encre);background:var(--panneau)}
+td{color:var(--doux)}td:first-child{color:var(--encre);font-weight:600}
+tr:last-child td{border-bottom:0}
+/* niveaux de configuration */
+.niveaux{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:16px;overflow:hidden;margin-top:22px}
+.niveau{background:var(--carte);padding:22px}
+.niveau h3{margin-top:0;display:flex;align-items:center;gap:10px}
+.niveau h3::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--vert)}
+.niveau.n2 h3::before{background:var(--or)}.niveau.n3 h3::before{background:var(--rouge)}
+.niveau p{margin-top:6px;font-size:15.5px}
+.niveau ul{list-style:none;padding:0;margin-top:12px;font-size:15.5px}
+.niveau li{margin-top:6px}.niveau li b{color:var(--encre)}
+@media (max-width:900px){.niveaux{grid-template-columns:1fr}}
+/* téléchargement */
+.dl{background:var(--carte);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:8px}
+.dl h2{margin:0}
+.dl p{margin-top:6px}
+.dl dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-top:14px;font-size:15px;color:var(--doux)}
+.dl dt{font-weight:600;color:var(--encre)}.dl dd{margin:0;word-break:break-all}
+@media (max-width:760px){.dl{grid-template-columns:1fr}}
+.pas{list-style:none;padding:0!important;counter-reset:p;display:grid;gap:14px;margin-top:18px}
+.pas li{counter-increment:p;background:var(--carte);border-radius:12px;padding:16px 18px 16px 62px;position:relative;margin:0;color:var(--doux)}
+.pas li::before{content:counter(p);position:absolute;left:18px;top:15px;width:30px;height:30px;border-radius:50%;background:var(--touche);color:var(--toucheT);display:grid;place-items:center;font-weight:700;font-size:15px}
+.pas li strong{display:block;color:var(--encre);margin-bottom:2px}
+/* nouveautés */
+.version{border-top:1px solid var(--trait);padding-top:30px;margin-top:34px}
+.version:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.version h2{margin-top:0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.version h2 small{font:500 15px/1 "Familjen Grotesk Variable";color:var(--doux)}
+/* questions fréquentes */
+.faq details{background:var(--carte);border-radius:12px;margin-top:10px}
+.faq summary{cursor:pointer;padding:16px 18px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--doux)}
+.faq details[open] summary::after{content:"−"}
+.faq details>div{padding:0 18px 16px;color:var(--doux)}
+.faq details>div p{margin-top:8px}.faq details>div p:first-child{margin-top:0}
+.faq summary:focus-visible{outline:3px solid var(--or);outline-offset:2px;border-radius:12px}
+/* manuel */
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+.doc{background:var(--carte);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;text-decoration:none}
+.doc b{font-size:18px}.doc span{color:var(--doux);font-size:15px}
+.doc:hover{box-shadow:0 0 0 2px var(--or)}
+@media (max-width:700px){.docs{grid-template-columns:1fr}}
+/* 404 */
+.perdu{min-height:60vh;display:grid;place-content:center;text-align:center;padding:60px 16px}
+.perdu .ecran-vide{width:min(420px,80vw);aspect-ratio:16/9;margin:0 auto 28px;border-radius:10px;background:radial-gradient(120% 90% at 50% 40%,#1d2a44,#0d1220);display:grid;place-items:center;color:#aeb7c8;box-shadow:0 0 0 3px var(--trait)}
+
+/* ===== Animations des trois onglets (accueil) ===== */
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.detail ul{grid-template-columns:1fr!important}
+.stage{position:relative;height:250px;border-radius:14px;background:var(--fond);padding:18px;overflow:hidden;display:flex;gap:14px;align-items:stretch}
+.st-col{display:flex;flex-direction:column;gap:8px;width:40%}
+.st-col .etiq{font-size:13px}
+.st-it{background:var(--carte);border-radius:8px;padding:9px 12px;font-size:14.5px;font-weight:600;transition:box-shadow .3s,opacity .3s}
+.st-it.pret{box-shadow:inset 0 0 0 2px var(--vert)}
+.st-it.parti{opacity:.45}
+.st-key{margin-top:auto;align-self:flex-start;font:600 13px/1 "Familjen Grotesk Variable";padding:10px 22px;border-radius:7px;background:var(--or);color:#1a1408;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25);transition:transform .08s,box-shadow .08s}
+.st-key.appui{transform:translateY(2px);box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}
+.st-ecran{flex:1;border-radius:10px;background:radial-gradient(120% 90% at 50% 40%,#1d2a44,#0d1220);display:grid;place-items:center;text-align:center;padding:14px 18px;box-shadow:0 0 0 3px var(--rouge);transition:box-shadow .3s;position:relative;overflow:hidden}
+.st-ecran.pvw{box-shadow:0 0 0 3px var(--vert)}
+.st-ecran p{color:#f6f1e4;font:500 18px/1.3 "Newsreader Variable",Georgia,serif;text-wrap:balance}
+.st-ecran small{display:block;color:#aeb7c8;font-size:12px;margin-top:6px}
+.st-ecran .entre{animation:entre .4s ease}
+.st-plein{flex-direction:column}
+.st-plein .st-ecran{flex:1}
+.st-types{display:flex;gap:6px;justify-content:center}
+.st-types span{font-size:13px;font-weight:600;color:var(--doux);padding:5px 10px;border-radius:999px;background:var(--carte);transition:background .25s,color .25s}
+.st-types span.on{background:var(--rouge);color:#fff}
+.st-video{width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#2a3a5c,#132036 60%,#3a2a4a)}
+.st-video i{width:0;height:0;border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;opacity:.9}
+.st-video b{position:absolute;left:14px;right:14px;bottom:12px;height:4px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden}
+.st-video b::after{content:"";position:absolute;inset:0;width:0;background:var(--or);animation:prog 1.6s linear forwards}
+@keyframes prog{to{width:100%}}
+.st-annonce{color:#fff;font:700 20px/1.2 "Familjen Grotesk Variable"}.st-annonce small{font-weight:500}
+.st-wifi{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#cfe8d8;background:rgba(10,14,22,.7);padding:5px 9px;border-radius:999px;z-index:2;transition:color .3s}
+.st-wifi svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.st-wifi.coupe{color:#ffb4b4}
+.st-ok{position:absolute;left:12px;bottom:12px;font-size:12.5px;font-weight:600;color:#bff0cf;background:rgba(10,14,22,.7);padding:5px 9px;border-radius:999px;opacity:0;transition:opacity .4s;z-index:2}
+.st-ok.vu{opacity:1}
+@media (max-width:900px){.detail{grid-template-columns:1fr}.stage{height:230px}}
+@media (prefers-reduced-motion:reduce){.st-it,.st-ecran,.st-key,.st-types span,.st-wifi,.st-ok{transition:none}.st-ecran .entre{animation:none}.st-video b::after{animation:none;width:60%}}

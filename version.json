@@ -1,0 +1,9 @@
+{
+ "version": "1.98",
+ "date": "2026-11-05",
+ "page": "https://regielive.github.io/telecharger.html",
+ "notes": [
+  "Autopilot comprend une référence même quand une virgule suit le nom du livre (« Corinthiens, chapitre 13 »).",
+  "Si l’ordinateur est trop lent pour Autopilot ou Apprendre, un message clair l’explique, avec un conseil."
+ ]
+}

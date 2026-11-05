@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://regielive.github.io/sitemap.xml
