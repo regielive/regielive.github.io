@@ -168,7 +168,7 @@ h1{font:700 clamp(40px,5.4vw,78px)/.98 "Familjen Grotesk Variable";letter-spacin
 .pc img{width:100%;max-width:420px;border-radius:8px;display:block;justify-self:center}
 footer{padding-top:34px;padding-bottom:40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:15px;color:var(--doux)}
 footer nav{gap:20px;font-size:15px}
-@media (max-width:900px){.hero,.pc{grid-template-columns:1fr}.axes{grid-template-columns:1fr;gap:6px}.trois{grid-template-columns:1fr}header>nav a{display:none}}
+@media (max-width:900px){.hero,.pc{grid-template-columns:1fr}.axes{grid-template-columns:1fr;gap:6px}.trois{grid-template-columns:1fr}header>nav>a{display:none}}
 @media (prefers-reduced-motion:reduce){.mon,.mon .img{transition:none}.ax.on.anim i{animation:none;width:100%}}
 
 /* ===== Éléments communs à toutes les pages ===== */
@@ -304,3 +304,16 @@ tr:last-child td{border-bottom:0}
 .st-ok.vu{opacity:1}
 @media (max-width:900px){.detail{grid-template-columns:1fr}.stage{height:230px}}
 @media (prefers-reduced-motion:reduce){.st-it,.st-ecran,.st-key,.st-types span,.st-wifi,.st-ok{transition:none}.st-ecran .entre{animation:none}.st-video b::after{animation:none;width:60%}}
+/* captures : la version claire en thème clair, la sombre en thème sombre */
+.v-sombre{display:none!important}
+@media (prefers-color-scheme:dark){:root:not([data-theme="clair"]) .v-clair{display:none!important}:root:not([data-theme="clair"]) .v-sombre{display:block!important}}
+:root[data-theme="sombre"] .v-clair{display:none!important}:root[data-theme="sombre"] .v-sombre{display:block!important}
+.pc>div img{width:100%;max-width:420px;border-radius:8px;display:block;justify-self:center}
+
+/* bouton flottant « Remonter en haut » */
+.haut{position:fixed;right:18px;bottom:18px;z-index:30;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--touche);color:var(--toucheT);display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(10,15,25,.5);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.haut.vu{opacity:.92;transform:none;pointer-events:auto}.haut:hover{opacity:1}
+.haut svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.haut:focus-visible{outline:3px solid var(--or,#179ecc);outline-offset:3px}
+#contenu:focus{outline:none}
+@media (prefers-reduced-motion:reduce){.haut{transition:none}}
