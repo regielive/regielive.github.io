@@ -1,9 +1,11 @@
 {
- "version": "1.98",
- "date": "2026-11-05",
+ "version": "1.99",
+ "date": "2026-11-08",
  "page": "https://regielive.github.io/telecharger.html",
  "notes": [
-  "Autopilot comprend une référence même quand une virgule suit le nom du livre (« Corinthiens, chapitre 13 »).",
-  "Si l’ordinateur est trop lent pour Autopilot ou Apprendre, un message clair l’explique, avec un conseil."
+  "Une télécommande sur smartphone : un téléphone fait avancer la projection, revient à un refrain, envoie un bloc préparé ou une suggestion d’Autopilot. L’ordinateur de la régie garde toujours la priorité.",
+  "L’onglet Alertes est réorganisé : Messages, Équipe, Télécommande et Tally caméras, chacun avec son état d’un coup d’œil.",
+  "Un clic droit sur un média : l’ajouter au programme, le renommer, l’afficher dans l’Explorateur.",
+  "RégieLive prévient quand une nouvelle version est disponible, jamais pendant un culte, sans rien installer tout seul."
  ]
 }
