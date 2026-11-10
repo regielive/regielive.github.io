@@ -1,11 +1,11 @@
 {
- "version": "1.99",
- "date": "2026-11-08",
+ "version": "2.0",
+ "date": "2026-11-10",
+ "importance": "recommandee",
  "page": "https://regielive.github.io/telecharger.html",
  "notes": [
-  "Une télécommande sur smartphone : un téléphone fait avancer la projection, revient à un refrain, envoie un bloc préparé ou une suggestion d’Autopilot. L’ordinateur de la régie garde toujours la priorité.",
-  "L’onglet Alertes est réorganisé : Messages, Équipe, Télécommande et Tally caméras, chacun avec son état d’un coup d’œil.",
-  "Un clic droit sur un média : l’ajouter au programme, le renommer, l’afficher dans l’Explorateur.",
-  "RégieLive prévient quand une nouvelle version est disponible, jamais pendant un culte, sans rien installer tout seul."
+  "La première version de production : RégieLive 2.0 reprend toute la 1.99 (télécommande sur smartphone, onglet Alertes, menu des médias).",
+  "Chaque nouvelle version a un niveau d’importance : recommandée (le message habituel), importante (un message rouge, à installer avant le prochain culte) ou facultative (seulement dans À propos).",
+  "La fenêtre À propos montre si RégieLive est à jour, avec un bouton pour vérifier tout de suite."
  ]
 }
