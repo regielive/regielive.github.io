@@ -241,6 +241,7 @@ tr:last-child td{border-bottom:0}
 .dl p{margin-top:6px}
 .dl dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-top:14px;font-size:15px;color:var(--doux)}
 .dl dt{font-weight:600;color:var(--encre)}.dl dd{margin:0;word-break:break-all}
+.dl+.dl{margin-top:16px}
 @media (max-width:760px){.dl{grid-template-columns:1fr}}
 .pas{list-style:none;padding:0!important;counter-reset:p;display:grid;gap:14px;margin-top:18px}
 .pas li{counter-increment:p;background:var(--carte);border-radius:12px;padding:16px 18px 16px 62px;position:relative;margin:0;color:var(--doux)}

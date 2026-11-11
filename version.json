@@ -1,11 +1,19 @@
 {
- "version": "2.0",
- "date": "2026-11-10",
+ "version": "2.1",
+ "date": "@@DATE_ISO@@",
  "importance": "recommandee",
  "page": "https://regielive.github.io/telecharger.html",
  "notes": [
-  "La première version de production : RégieLive 2.0 reprend toute la 1.99 (télécommande sur smartphone, onglet Alertes, menu des médias).",
-  "Chaque nouvelle version a un niveau d’importance : recommandée (le message habituel), importante (un message rouge, à installer avant le prochain culte) ou facultative (seulement dans À propos).",
-  "La fenêtre À propos montre si RégieLive est à jour, avec un bouton pour vérifier tout de suite."
- ]
+  "À la réouverture d’un projet, le dernier bloc affiché revient, vidéo arrêtée au début, même sans avoir réenregistré.",
+  "Un clic sur un bloc ne le déplie plus ; un moment créé en Projection apparaît aussi en Préparation.",
+  "RégieLive existe maintenant aussi pour Ubuntu."
+ ],
+ "linux": {
+  "page": "https://regielive.github.io/telecharger.html#ubuntu",
+  "notes": [
+   "NDI s’installe en un clic depuis RégieLive, avec un Moniteur NDI pour voir un flux du réseau.",
+   "À la réouverture d’un projet, le dernier bloc affiché revient, vidéo arrêtée au début.",
+   "Un clic sur un bloc ne le déplie plus ; un moment créé en Projection apparaît aussi en Préparation."
+  ]
+ }
 }
