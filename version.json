@@ -1,19 +1,19 @@
 {
- "version": "2.1",
- "date": "2026-11-11",
+ "version": "2.2",
+ "date": "2026-11",
  "importance": "recommandee",
  "page": "https://regielive.github.io/telecharger.html",
  "notes": [
-  "À la réouverture d’un projet, le dernier bloc affiché revient, vidéo arrêtée au début, même sans avoir réenregistré.",
-  "Un clic sur un bloc ne le déplie plus ; un moment créé en Projection apparaît aussi en Préparation.",
-  "RégieLive existe maintenant aussi pour Ubuntu."
+  "Télécommande : un bouton Précédent à côté de Suivant.",
+  "Télécommande : ajouter un chant ou un passage biblique non prévu, et choisir où il se place.",
+  "RégieLive signale aussi une nouvelle version publiée sur GitHub."
  ],
  "linux": {
   "page": "https://regielive.github.io/telecharger.html#ubuntu",
   "notes": [
-   "NDI s’installe en un clic depuis RégieLive, avec un Moniteur NDI pour voir un flux du réseau.",
-   "À la réouverture d’un projet, le dernier bloc affiché revient, vidéo arrêtée au début.",
-   "Un clic sur un bloc ne le déplie plus ; un moment créé en Projection apparaît aussi en Préparation."
+   "Télécommande : un bouton Précédent à côté de Suivant.",
+   "Télécommande : ajouter un chant ou un passage biblique non prévu, et choisir où il se place.",
+   "RégieLive signale aussi une nouvelle version publiée sur GitHub."
   ]
  }
 }
