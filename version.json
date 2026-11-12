@@ -1,19 +1,19 @@
 {
- "version": "2.2",
+ "version": "2.2.1",
  "date": "2026-11",
  "importance": "recommandee",
  "page": "https://regielive.github.io/telecharger.html",
  "notes": [
-  "Télécommande : un bouton Précédent à côté de Suivant.",
-  "Télécommande : ajouter un chant ou un passage biblique non prévu, et choisir où il se place.",
-  "RégieLive signale aussi une nouvelle version publiée sur GitHub."
+  "RégieLive annonce une nouvelle version à chaque ouverture.",
+  "À la réouverture d’un projet, l’aperçu Programme montre bien le bloc à l’écran.",
+  "La Préparation revient sur le dernier bloc consulté."
  ],
  "linux": {
   "page": "https://regielive.github.io/telecharger.html#ubuntu",
   "notes": [
-   "Télécommande : un bouton Précédent à côté de Suivant.",
-   "Télécommande : ajouter un chant ou un passage biblique non prévu, et choisir où il se place.",
-   "RégieLive signale aussi une nouvelle version publiée sur GitHub."
+   "RégieLive annonce une nouvelle version à chaque ouverture.",
+   "À la réouverture d’un projet, l’aperçu Programme montre bien le bloc à l’écran.",
+   "La Préparation revient sur le dernier bloc consulté."
   ]
  }
 }
