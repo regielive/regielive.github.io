@@ -1,19 +1,7 @@
 {
- "version": "2.2.1",
+ "version": "0.0",
  "date": "2026-11",
- "importance": "recommandee",
+ "importance": "facultative",
  "page": "https://regielive.github.io/telecharger.html",
- "notes": [
-  "RégieLive annonce une nouvelle version à chaque ouverture.",
-  "À la réouverture d’un projet, l’aperçu Programme montre bien le bloc à l’écran.",
-  "La Préparation revient sur le dernier bloc consulté."
- ],
- "linux": {
-  "page": "https://regielive.github.io/telecharger.html#ubuntu",
-  "notes": [
-   "RégieLive annonce une nouvelle version à chaque ouverture.",
-   "À la réouverture d’un projet, l’aperçu Programme montre bien le bloc à l’écran.",
-   "La Préparation revient sur le dernier bloc consulté."
-  ]
- }
+ "notes": []
 }
