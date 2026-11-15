@@ -134,6 +134,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
  if(large){if(dejaVu)return;dejaVu=true;joueTout();}
  else{const k=e.target.id.slice(3);if(vu[k])return;vu[k]=true;joueUne(k);}}),{threshold:large?.35:.5});
 if(large)io.observe(document.querySelector(".imprevu"));else Object.values(cartes).forEach(c=>io.observe(c));
-
-
-
+/* « Et aussi » : un bloc choisi passe à l’écran */
+document.querySelectorAll(".fx").forEach(ax=>{const bs=[...ax.querySelectorAll(".fx-bloc")],vs=[...ax.querySelectorAll(".fx-vue")];
+bs.forEach(b=>b.addEventListener("click",()=>{bs.forEach(x=>x.setAttribute("aria-pressed",String(x===b)));vs.forEach(v=>v.hidden=v.dataset.i!==b.dataset.i);
+if(matchMedia("(max-width:820px)").matches)ax.querySelector(".fx-prog").scrollIntoView({block:"nearest",behavior:"smooth"});}));});

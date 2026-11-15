@@ -135,25 +135,17 @@ h1{font:700 clamp(40px,5.4vw,78px)/.98 "Familjen Grotesk Variable";letter-spacin
 /* Et aussi : petites sections accolées */
 .aussi{border-top:1px solid var(--trait);padding-top:60px;padding-bottom:70px}
 .aussi h2{font:700 clamp(28px,3vw,40px)/1.1 "Familjen Grotesk Variable";letter-spacing:-.02em}
-.tuiles{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:16px;overflow:hidden}
-.tuile{background:var(--carte);padding:24px 24px 26px}
-.tuile svg{width:28px;height:28px;fill:none;stroke:var(--or);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.tuile h3{font-size:19px;margin-top:12px;letter-spacing:-.01em}
-.tuile p{margin-top:4px;color:var(--doux);font-size:15.5px;line-height:1.45}
 @media (max-width:1100px){.imp-g{grid-template-columns:1fr 1fr}}@media (max-width:760px){.imp-g{grid-template-columns:1fr}}
-@media (max-width:900px){.tuiles{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.tuiles{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.propose{transition:none}}
 /* rythme : bande photo, bande sombre, alternance clair / blanc */
 .bande{position:relative;height:clamp(300px,38vw,460px);overflow:hidden;background:#0d1118}
-.bande img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75}
+.bande img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;opacity:.75}
 .bande::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,20,.85),rgba(10,13,20,.25) 65%)}
-.bande-t{position:absolute;inset:auto 0 clamp(28px,5vw,56px) 0;z-index:1}
+.bande-t{position:absolute;inset:clamp(26px,4vw,52px) 0 auto 0;z-index:1}
 .bande-t p{color:#fff;font:500 clamp(24px,3vw,40px)/1.2 "Newsreader Variable",Georgia,serif;max-width:22ch;text-wrap:balance}
 .imprevu{--carte:#1f2633;--fond:#161c26;--encre:#eef1f6;--doux:#a9b2c2;--trait:#2e3644;background:#11161f;color:var(--encre);border-top:0!important}
 .etapes{background:var(--carte);border-top:0!important}
 .aussi{border-top:0!important}
-.aussi .tuile{background:var(--carte)}
 :root:not([data-theme="clair"]) .etapes{background:var(--carte)}
 /* un culte avec RégieLive : vraie suite d'étapes */
 .etapes{border-top:1px solid var(--trait);padding-top:60px;padding-bottom:70px}
@@ -320,3 +312,30 @@ tr:last-child td{border-bottom:0}
 @media (prefers-reduced-motion:reduce){.haut{transition:none}}
 .dl code.sha{font-size:12.5px;line-height:1.5}
 .dl-act{display:flex;flex-direction:column;align-items:center;gap:10px}.dl-old{font-size:14px;color:var(--doux)}
+/* Accueil, « Et aussi » : chemin de fer des fonctions et écran « À l’écran », comme dans RégieLive */
+.fx-tete{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 40px;flex-wrap:wrap}
+.fx-tete p{color:var(--doux);font-size:16px;max-width:40ch}
+.fx{margin-top:30px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:start}
+.fx-rail{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.fx-bloc{width:100%;display:flex;align-items:center;gap:14px;padding:8px 14px 8px 8px;border:0;border-radius:10px;background:var(--carte);color:var(--encre);font:inherit;text-align:left;cursor:pointer;position:relative;box-shadow:inset 0 0 0 1px var(--trait)}
+.fx-bloc:hover{box-shadow:inset 0 0 0 1px var(--doux)}
+.fx-bloc[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--rouge)}
+.fx-bloc[aria-pressed="true"]::before{content:"";position:absolute;left:-10px;top:12px;bottom:12px;width:4px;border-radius:2px;background:var(--rouge)}
+.fx-vig{flex:none;width:76px;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:var(--ecran)}
+.fx-vig img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.fx-txt{display:flex;flex-direction:column;min-width:0}
+.fx-txt b{font-size:17px;line-height:1.25}
+.fx-txt small{color:var(--doux);font-size:13.5px;margin-top:2px}
+.fx-prog{position:sticky;top:20px;background:var(--carte);border-radius:14px;padding:10px;box-shadow:0 0 0 2px var(--rouge),0 24px 60px -24px rgba(217,54,54,.45)}
+.fx-bar{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--doux);padding:2px 4px 10px}
+.fx-pt{width:9px;height:9px;border-radius:50%;background:var(--rouge)}
+.fx-cadre{aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:var(--ecran)}
+.fx-cadre img{width:100%;height:100%;object-fit:contain}
+.fx-vue figcaption{padding:12px 6px 4px;color:var(--doux);font-size:16px;line-height:1.5}
+.fx-vue figcaption b{color:var(--encre);display:block;font-size:19px;margin-bottom:2px}
+.fx-vue[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.fx-vue:not([hidden]) .fx-cadre{animation:fxIn .25s ease-out}@keyframes fxIn{from{opacity:.25}to{opacity:1}}}
+@media (max-width:820px){.fx{grid-template-columns:1fr}.fx-prog{position:static;order:-1}.fx-bloc[aria-pressed="true"]::before{left:-8px}}
+/* petits téléphones (jusqu’à 400 px) : l’en-tête tient sur une ligne */
+@media (max-width:400px){header{gap:8px}header nav{gap:6px}.logo{font-size:19px}.theme button{padding:6px 6px;font-size:12px}.menu-m summary{padding:8px 9px}}
+.fx-bloc:focus-visible{outline:3px solid var(--or);outline-offset:3px}
